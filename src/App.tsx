@@ -6,6 +6,7 @@ import shuffle from "./utils/shuffle";
 import Lost from "./components/Lost";
 import CatMatrix from "./components/CatMatrix";
 import Won from "./components/Won";
+import api from "./api";
 
 export interface Cat {
   breeds: any[];
@@ -43,10 +44,7 @@ const App = () => {
   };
 
   const getCats = async () => {
-    const response = await axios.get(
-      `http://localhost:1337/api/cats/${numberOfCats}`
-    );
-    setCats(response.data);
+    setCats(await api.getCats(numberOfCats));
   };
 
   useEffect(() => {
