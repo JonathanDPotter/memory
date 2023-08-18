@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Welcome from "./components/Welcome";
 import Header from "./components/Header";
